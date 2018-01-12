@@ -1,0 +1,51 @@
+Questions:
+
+5.1 Write an algorithm to carry out numerical integration. How might you optimize the algorithm?
+
+5.2 Suppose an asset takes values from a discrete set vj and the probability of vj is pj.
+    Write an algorithm that produces the random variable for this asset from a uniformly distributed random variable.
+    
+5.3 Write a program to compute Fibonacci numbers.
+
+5.4 Given 9999 of the first 10,000 numbers, 
+    write a routine that is efficient in memory and computation time to find which number is missing.
+    
+5.5 Write an algorithm to increment the date by n days. (Robust against leap years and non-leap years.)
+
+5.6 How can we efficiently exponentiate a matrix.
+
+5.7 Code up a historgram maker.
+
+5.8 Let f(x) = sin(x)/x. Write code that returns the value of f(x).
+
+5.9 
+
+5.10 Write an algorithm which, when given an array of random real numbers,
+     finds the subarray whose sum of elements is maximal.
+
+5.11 Suppose I claim I have a routine that can sort n nubmers in O(n) time. Prove me wrong.
+
+5.12 Use the rand() function to randomly permute the integers between 1 and 100.
+
+5.13 Write a routine to calculate n factorial.
+
+5.14 You are given a matrix with the property that every row is increasing and every column is increasig.
+     A number, x, is known to lie within the matrix, give an efficient algorithm to locate it.
+     
+5.15 A vector v of integers has N elements. Every element is in the range 0  to N-1.
+     Write an algorithm that determines whether any number is  duplicated.
+
+5.16 Write a routine to do linear interpolation.
+
+5.17 A submarine starts at some point on the integer line; it moves a constant number of integers each turn.
+     Once a turn you can lob a missile at some point on the integer line.
+     Can you give an algorithm that will hit the submarine in a finite number of turns?
+
+5.18 
+
+5.19 Write a routine that sums the numbers in the nodes of a tree. 
+     Nodes can have two branches, one, or none.
+     
+5.20 Given that a stock price at time T is N(100,1), you want to price a digital call struck at 110 by Monte Carlo Simulation.
+     What will happen if you do this? Improve the method.
+     
