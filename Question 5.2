@@ -1,1 +1,33 @@
+Q:Suppose an asset takes values from a discrete set vj and the probability of vj is pj.
+Write an algorithm that produces the random variable for this asset from a uniformly distributed random variable.
 
+Solution:
+@C++
+We use a simple array class from the xlw.
+
+double Simulate(conset MyArray& p,
+                conset MyArray& v,
+                double u
+                )
+{
+    int i=0;
+    while ( u > p[i])
+    {
+     u-= p[i]
+     ++i;
+    }
+    return v[i];
+}
+
+Essentially, we want to find the first i such that the cumulative up to i is bigger than u.
+Rather than computing all the cumulatives, we instead subtract the probability of each event until we get something sufficiently small.
+
+Note that the timing of this algorithm is O(N) where N is the number of possible events.
+The memory usage is constant.
+
+# Some possible related questions:
+1.Suppose N is very big, how would you get a faster algorithm?
+2.How would you test this algorithm?
+3.Give an algorithm to generate a uniformly distributed random variable from an integer random nubmer generator.
+4.What is your favourite integer random number generator?
+5.What peoblems can arise when using random number generators
