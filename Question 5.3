@@ -1,0 +1,49 @@
+Q:Write a program to compute Fibonacci numbers.
+
+Solution:
+@C++
+The first and quickest way to implement Fibonacci numbers is by recursion.
+
+int Fib1(int N)
+{
+  if (N <= 1)
+    return 1;
+  return Fib(N-1) + Fib1(N-2);
+}
+
+This is a terrible solution.
+If we run this with a resonable value of N, it will take forever to return.
+The reason is that we compute the same Fibonaci number over and over again.
+For example, Fib(30) computes Fib(29) and Fib(28), but then Fib(29) computes it again.
+
+One solution is simply to compute upwards, storing the nubmers as we go.
+
+int Fib2(int N)
+{
+  std::vector<int> v(N+1);
+  v[0] = 1;
+  v[1] = 1;
+  
+  for (int j=2; j <= N; ++j)
+    v[j] = v[j-1] + v[j-2];
+  return v[N];
+}
+
+The only downside of this is that we use more memory; in fact, the program is linear in memory storage.
+
+int Fib3(int N)
+{
+  std::vector<int> v(3);
+  v[0] = 1;
+  v[1] = 1;
+  
+  for (int j=0; j <= N-2; ++j)
+    v[(j+2) % 3] = v[(j+1) % 3] + v[(j+1) % 3];
+    
+  return  v[N%3];
+}
+
+# Some possible related questions:
+1.Do you think that recursion is a useful technique?
+2.Is it possible to compute Fibonacci nubmers in constant time?
+3.How could we avoid reallocating the memory for an array each time the routine was called?
