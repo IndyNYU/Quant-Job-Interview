@@ -1,0 +1,39 @@
+Q: Write an algorithm to carry out numerical integration.
+How might you optimize the algorithm?
+
+Solution:
+@C++
+double F(double x)
+{
+  //put your function here
+  
+  return x*x;
+}
+
+double IntegrateF(double a, double b, int N)
+{
+double result=0.0;
+double length=(b-a)/N;
+
+for (int i=0; i<N; ++i)
+  result +=F(a+(i+0.5)*length);
+result *= length;
+return result;
+}
+
+This routine implements one of the simplest possible numerical integrators.
+We divide the interval into N pieces of equal size, take the value at the mid-point of each sub-interval,
+sum them and then multiply by the length of the interval.
+
+Note that we have multiplied by the length once at the end,
+rather than on every iteration of the loop.
+In general, when optimizing we want to do as many computations outside the loop as possible.
+This routine could be further optimized by simplifying the expression a+(i+0.5)*length using more pre-computations.
+
+# Some possible related questions:
+1.What's the order of convergence?
+2.How could you tell if the routine has converged?
+3.What functions would it fail on?
+4.Implement the trapezium rule.
+5.What is your favourite integration procedure and how does it work?
+6.How would you design the code?
